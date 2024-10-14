@@ -1,0 +1,31 @@
+{
+    "users": [
+      { "id": "1", "username": "Admin", "password": "Admin1234", "isOnline": true },
+      { "id": "2", "username": "Liliya", "password": "Liliya1234", "isOnline": false },
+      { "id": "3", "username": "Alex", "password": "Alex1234", "isOnline": false }
+    ],
+    "channels": [
+      { "id": "1", "name": "family" },
+      { "id": "2", "name": "general" },
+      { "id": "3", "name": "work" },
+      { "id": "4", "name": "hobby" }
+    ],
+    "userChannels": [
+      { "userId": "1", "channelId": "1" },
+      { "userId": "2", "channelId": "1" },
+      { "userId": "1", "channelId": "3" },
+      { "userId": "2", "channelId": "3" },
+      { "userId": "2", "channelId": "4" },
+      { "userId": "3", "channelId": "3" }
+    ],
+    "messages": [
+      { "id": "1", "fromUser": "1", "channelId": "1", "content": "Hello everyone!" },
+      { "id": "2", "fromUser": "2", "channelId": "1", "content": "Hi, Ramil!" },
+      { "id": "3", "fromUser": "3", "channelId": "2", "content": "Go home!" },
+      { "id": "4", "fromUser": "4", "channelId": "2", "content": "Okey!" },
+      { "id": "5", "fromUser": "5", "channelId": "3", "content": "Have a nice day!" },
+      { "id": "6", "fromUser": "6", "channelId": "3", "content": "Thanks!You too!" },
+      { "id": "7", "fromUser": "7", "channelId": "4", "content": "Go to play tennis!" },
+      { "id": "8", "fromUser": "8", "channelId": "4", "content": "Go!" }
+    ]
+  }

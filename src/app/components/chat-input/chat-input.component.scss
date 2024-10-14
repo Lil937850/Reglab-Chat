@@ -1,0 +1,20 @@
+@import "@styles/variables/colors.scss";
+@import "@styles/variables/global.scss";
+@import "@styles/mixins.scss";
+
+.description {
+    @include font($font-small); 
+}
+.input {
+  height: 30px;
+  background-color: $light-gray;
+  border: 1px solid black;
+  border-radius: 3px;
+}
+
+.button {
+  height: 30px;
+  background-color: $gray;
+  border: none;
+  border-radius: 3px;
+}

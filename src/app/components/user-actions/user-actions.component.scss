@@ -1,0 +1,11 @@
+@import "@styles/variables/global.scss";
+@import "@styles/mixins.scss";
+
+
+.description {
+    @include font($font-small); 
+}
+
+.icons-block {
+    cursor: pointer;
+}

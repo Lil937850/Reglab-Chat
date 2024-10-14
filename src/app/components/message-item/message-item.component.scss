@@ -1,0 +1,10 @@
+@import "@styles/variables/global.scss";
+@import "@styles/mixins.scss";
+
+.name {
+    font-weight: 600;
+}
+
+.message {
+    @include font($font-small); 
+}

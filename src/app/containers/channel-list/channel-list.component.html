@@ -1,0 +1,16 @@
+@if (loading$ | async;) {
+<div>Loading...</div>
+}
+@if (error$ | async; as error) {
+<div>Error: {{ error }}</div>
+}
+<ul fxLayout="column" fxLayoutGap="5px">
+  @for (channel of channels$ | async; track channel.id) {
+  <li (click)="loadChannelUsers(channel.id)">
+    <app-channel-item [title]="channel.name" [isActive]="isActiveId === channel.id"></app-channel-item>
+  </li>
+  }
+  @empty {
+  <li>No items found</li>
+  }
+</ul>

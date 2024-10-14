@@ -1,0 +1,16 @@
+@if (loading$ | async;) {
+<div>Loading...</div>
+}
+@if (error$ | async; as error) {
+<div>Error: {{ error }}</div>
+}
+<ul fxLayout="column" fxLayoutGap="5px">
+    @for (message of messages$ | async; track message.id) {
+    <li>
+        <app-message-item [name]="message.fromUser" [message]="message.content"></app-message-item>
+    </li>
+    }
+    @empty {
+    <li>No items found</li>
+    }
+</ul>

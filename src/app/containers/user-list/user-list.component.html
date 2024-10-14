@@ -1,0 +1,16 @@
+@if (loading$ | async;) {
+<div>Loading...</div>
+}
+@if (error$ | async; as error) {
+<div>Error: {{ error }}</div>
+}
+<ul fxLayout="column" fxLayoutGap="5px">
+    @for (user of users$ | async; track user.id) {
+    <li>
+        <app-user-item [username]="user.username" [isOnline]="user.isOnline"></app-user-item>
+    </li>
+    }
+    @empty {
+    <li>No items found</li>
+    }
+</ul>

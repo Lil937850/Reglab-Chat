@@ -1,0 +1,7 @@
+
+@import "@styles/variables/global.scss";
+@import "@styles/mixins.scss";
+
+.main { 
+    @include font($font-regular); 
+} 

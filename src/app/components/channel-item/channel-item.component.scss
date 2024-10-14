@@ -1,0 +1,12 @@
+@import "@styles/variables/colors.scss";
+
+.item {
+    background-color: $light-gray;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 3px;
+}
+
+.active {
+    background-color: $gray;
+}

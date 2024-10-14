@@ -1,1 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+@import '@styles/reset.scss';
+@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+@import url('https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;700&display=swap');
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
