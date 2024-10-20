@@ -25,7 +25,7 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { chatReducer } from './store/chat.reducer';
 import { ChatEffects } from './store/chat.effects';
-import { HttpClientModule, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'; // используем новую функцию
+import { HttpClientModule} from '@angular/common/http';
 import { UserService } from './services/user.service';
 import { LoginComponent } from './pages/login/login.component';
 import { MatSpinner } from '@angular/material/progress-spinner';
@@ -33,7 +33,7 @@ import { AuthService } from './services/auth';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ChatPageComponent } from './pages/chat-page/chat-page.component';
-import { MatListModule } from '@angular/material/list'; // Импортируйте MatListModule
+import { MatListModule } from '@angular/material/list';
 import { MatDividerModule } from '@angular/material/divider';
 import { MessageItemComponent } from './components/message-item/message-item.component';
 @NgModule({
