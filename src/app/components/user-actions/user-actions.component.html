@@ -3,12 +3,12 @@
         <h2>{{name}}</h2>
         <span class='description'>ITS YOU</span>
     </div>
-    <div fxLayout="row" fxLayoutGap="5px" (nodeClicked)="onSettingsClick()" class="icons-block">
+    <div fxLayout="row" fxLayoutGap="5px" (click)="onSettingsClick()" class="icons-block">
         <div fxLayout="column" fxLayoutGap="2px" fxLayoutAlign="center center" class="icons-block">
             <mat-icon fontIcon="settings"></mat-icon>
             <span class='description'>SETTINGS</span>
         </div>
-        <div fxLayout="column" fxLayoutGap="2px" fxLayoutAlign="center center" (nodeClicked)="onLogoutClick()" class="icons-block">
+        <div fxLayout="column" fxLayoutGap="2px" fxLayoutAlign="center center" (click)="onLogoutClick()" class="icons-block">
             <mat-icon fontIcon="logout"></mat-icon>
             <span class='description'>LOGOUT</span>
         </div>

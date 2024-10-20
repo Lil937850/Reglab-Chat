@@ -3,4 +3,6 @@ export interface MessageModel {
     fromUser: string;
     channelId: string;
     content: string;
+    username?: string
 }
+

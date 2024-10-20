@@ -17,6 +17,14 @@ export class UserService {
         return this.http.get<UserModel[]>(`${this.apiUrl}/users`);
     }
 
+    getUserById(id: string): Observable<UserModel> {
+        return this.http.get<UserModel>(`${this.apiUrl}/users/${id}`);
+    }
+
+    updateUserStatus(id: string, isOnline: boolean): Observable<UserModel> {
+        return this.http.patch<UserModel>(`${this.apiUrl}/users/${id}`, { isOnline });
+    }
+
     getChannelUsers(channelId: string): Observable<UserModel[]> {
         return this.http.get<UserChannel[]>(`${this.apiUrl}/userChannels?channelId=${channelId}`).pipe(
             switchMap(userChannels => {

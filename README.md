@@ -1,27 +1,46 @@
-# Reglab
+# Angular Chat Application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.7.
+Добро пожаловать в проект **Angular Reglab Chat Application**! Это приложение, разработанное с использованием Angular и фейкового JSON-сервера для управления данными. Следуйте инструкциям ниже, чтобы установить проект, запустить приложение и выполнить вход.
 
-## Development server
+## Содержание
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- [Требования](#требования)
+- [Установка](#установка)
+- [Запуск приложения](#запуск-приложения)
+- [Вход в приложение](#вход-в-приложение)
 
-## Code scaffolding
+## Требования
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Установленный [Node.js](https://nodejs.org/) (рекомендуемая версия 14.x или выше).
+- Установленный [npm](https://www.npmjs.com/get-npm) (входит в комплект с Node.js).
+- Установленный [Angular CLI](https://angular.io/cli) (инструкция по установке ниже).
 
-## Build
+## Установка
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. **Установите Angular CLI**
 
-## Running unit tests
+   Чтобы установить Angular CLI, выполните следующую команду:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+   ```bash
+   npm install -g @angular/cli
 
-## Running end-to-end tests
+2. **Запуск приложения**
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+    Чтобы запустить приложение, выполните следующую команду:
 
-## Further help
+    npm run start:all
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+3. **Вход в приложение**
+
+    Чтобы зайти в приложение нужно ввести данные пользователей из db.json
+
+      "username": "Admin",
+      "password": "Admin1234",
+   
+      "username": "Liliya",
+      "password": "Liliya1234",
+      
+      "username": "Alex",
+      "password": "Alex1234",
+     
+

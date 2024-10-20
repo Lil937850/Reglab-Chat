@@ -55,7 +55,7 @@ export const selectMessagesByChannelIdLoading = () =>
     createSelector(
         selectChatState,
         selectActiveChannel,
-        (state: ChatState, activeChannelId) => activeChannelId ? state.channelMessages[activeChannelId]?.loading : false
+        (state: ChatState, activeChannelId) => state.channelMessages[activeChannelId || '']?.loading
     );
 
 export const selectMessagesByChannelIdError = () =>
@@ -68,7 +68,6 @@ export const selectMessagesByChannelIdError = () =>
 export const selectMyChannels = createSelector(
     selectChatState,
     (state: ChatState) => {
-        console.log(state.channels.items);
         return state.channels.items
     }
 );
@@ -86,6 +85,11 @@ export const selectMyChannelsError = createSelector(
 export const selectIsAuth = createSelector(
     selectChatState,
     (state: ChatState) => !!state.user
+);
+
+export const selectIsUserLoading = createSelector(
+    selectChatState,
+    (state: ChatState) => state.loading
 );
 
 export const selectUserInfo = createSelector(

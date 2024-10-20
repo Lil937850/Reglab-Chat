@@ -1,5 +1,5 @@
 
 <mat-card-actions class="input-area" fxLayout="row" fxLayoutGap="10px">
-    <input class="input" [(ngModel)]="newMessage" matInput placeholder="Type text" value="">
+    <input class="input" [(ngModel)]="newMessage" matInput placeholder="Type text" value="" [disabled]="isDisabled">
     <button class="button" (click)="sendMessage()"><mat-icon>arrow_forward</mat-icon></button>
   </mat-card-actions>

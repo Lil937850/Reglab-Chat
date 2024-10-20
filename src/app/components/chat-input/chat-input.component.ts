@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-chat-input',
@@ -10,11 +10,13 @@ export class ChatInputComponent {
   newMessage: string = '';
   messages: string[] = [];
 
-  @Output() clickSend = new EventEmitter<void>();
+  @Input() isDisabled: boolean = false;
+
+  @Output() clickSend = new EventEmitter<string>();
 
   sendMessage() {
     if (this.newMessage.trim()) {
-      this.clickSend.emit()
+      this.clickSend.emit(this.newMessage)
       this.newMessage = '';
     }
   }

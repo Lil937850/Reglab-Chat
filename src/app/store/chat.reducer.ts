@@ -1,5 +1,5 @@
 import { createReducer, on } from '@ngrx/store';
-import { loadChannelsByUserId, loadChannelsByUserIdFailure, loadChannelsByUserIdSuccess, loadMessagesByChannelId, loadMessagesByChannelIdFailure, loadMessagesByChannelIdSuccess, loadUsers, loadUsersByChannelId, loadUsersByChannelIdFailure, loadUsersByChannelIdSuccess, loadUsersFailure, loadUsersSuccess, login, loginFailure, loginSuccess, setActiveChannelId } from './chat.actions';
+import { authMe, authMeFailure, authMeSuccess, loadChannelsByUserId, loadChannelsByUserIdFailure, loadChannelsByUserIdSuccess, loadMessagesByChannelId, loadMessagesByChannelIdFailure, loadMessagesByChannelIdSuccess, loadUsers, loadUsersByChannelId, loadUsersByChannelIdFailure, loadUsersByChannelIdSuccess, loadUsersFailure, loadUsersSuccess, login, loginFailure, loginSuccess, sendMessageToChannel, sendMessageToChannelFailure, sendMessageToChannelSuccess, setActiveChannelId, updateStatus, updateStatusFailure, updateStatusSuccess } from './chat.actions';
 import { UserModel } from 'app/model/UserModel';
 import { ChannelModel } from 'app/model/ChannelModel';
 import { MessageModel } from 'app/model/MessageModel';
@@ -82,6 +82,14 @@ export const _reducer = createReducer(
   on(login, (state) => ({ ...state, loading: true, error: null })),
   on(loginSuccess, (state, { user }) => ({ ...state, loading: false, user })),
   on(loginFailure, (state, { error }) => ({ ...state, loading: false, error: error })),
+
+  on(authMe, (state) => ({ ...state, loading: true, error: null })),
+  on(authMeSuccess, (state, { user }) => ({ ...state, loading: false, user })),
+  on(authMeFailure, (state, { error }) => ({ ...state, loading: false, error: error })),
+
+  on(updateStatus, (state) => ({ ...state, loading: true, error: null })),
+  on(updateStatusSuccess, (state, user ) => ({ ...state, loading: false, user })),
+  on(updateStatusFailure, (state, { error }) => ({ ...state, loading: false, error: error })),
 
   on(setActiveChannelId, (state, { channelId }) => ({
     ...state,
@@ -206,6 +214,42 @@ export const _reducer = createReducer(
         loading: false,
         error: error,
         items: []
+      }
+    }
+  })),
+
+  on(sendMessageToChannel, (state, { content }) => ({
+    ...state,
+    channelMessages: {
+      ...state.channelMessages,
+    }
+
+  })),
+  on(sendMessageToChannelSuccess, (state, messageData) => ({
+    ...state,
+    channelMessages: {
+      ...state.channelMessages,
+      [messageData.channelId]: {
+        ...state.channelMessages[messageData.channelId],
+        items: [...state.channelMessages[messageData.channelId].items, messageData]
+      }
+    }
+  })),
+  on(sendMessageToChannelFailure, (state, { error, channelId, messageId }) => ({
+    ...state,
+    channelMessages: {
+      ...state.channelMessages,
+      [channelId]: {
+        ...state.channelMessages[channelId],
+        items: state.channelMessages[channelId].items.map((el) => {
+          if (messageId === el.id) {
+            return {
+              ...el,
+              error: 'Couldn"t send the message'
+            }
+          }
+          return el
+        })
       }
     }
   }))
